@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/pages/home_page.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -45,7 +46,7 @@ class IntroPage extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return Scaffold();
+                  return const HomePage();
                 },
               ),
             ),
@@ -56,7 +57,7 @@ class IntroPage extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(15)),
               ),
               child: Text(
-                style: TextStyle(color: Colors.white, fontSize: 18),
+                style: TextStyle(color: Colors.white, fontSize: 20),
                 'Get Started ⚡',
               ),
             ),
