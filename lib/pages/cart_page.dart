@@ -8,7 +8,6 @@ class CartPage extends StatelessWidget {
   static const int itemName = 0;
   static const int itemPrice = 1;
   static const int itemImage = 2;
-  static const int itemColor = 3;
 
   @override
   Widget build(BuildContext context) {
