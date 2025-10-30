@@ -13,19 +13,24 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: PaymentButton(),
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 40),
-            HomeLeadIn(),
-            SizedBox(height: 4),
-            HomeHeader(),
-            SizedBox(height: 8),
-            HomeDivider(),
-            HomeSubtitle(),
-            ProductList(),
-          ], // children
+      body: Center(
+        child: Container(
+          constraints: BoxConstraints(maxWidth: 720),
+          child: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 40),
+                HomeLeadIn(),
+                SizedBox(height: 4),
+                HomeHeader(),
+                SizedBox(height: 8),
+                HomeDivider(),
+                HomeSubtitle(),
+                ProductList(),
+              ], // children
+            ),
+          ),
         ),
       ),
     );

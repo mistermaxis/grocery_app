@@ -8,7 +8,17 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('My Cart')),
+      appBar: PreferredSize(
+        preferredSize: Size(double.infinity, kToolbarHeight),
+        child: Center(
+          child: Container(
+            constraints: BoxConstraints(maxWidth: 720),
+            child: AppBar(
+              title: Text('My Cart'),
+            ),
+          ),
+        )
+        ),
       body: Consumer<CartModel>(
         builder: (context, value, child) {
           return Center(
