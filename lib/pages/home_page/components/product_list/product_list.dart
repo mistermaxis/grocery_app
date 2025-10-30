@@ -11,12 +11,7 @@ class ProductList extends StatelessWidget {
     return Expanded(
       child: Consumer<CartModel>(
         builder: (context, value, child) =>
-          Center(
-            child: Container(
-              constraints: BoxConstraints(maxWidth: 720),
-              child: GroceryItemList(value: value)
-            ),
-          ),
+          GroceryItemList(value: value),
       ),
     );
   }
