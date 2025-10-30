@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocery_app/pages/intro_page/intro_page.dart';
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
             Theme.of(context).textTheme.apply(),
           ),
         ),
-        home: IntroPage(),
+        home: const IntroPage(),
       );
   }
 }
