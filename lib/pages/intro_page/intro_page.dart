@@ -10,16 +10,21 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const HeroImage(),
-          const HeroHeader(),
-          const HeroSubtitile(),
-          const SizedBox(height: 40),
-          const HeroButton(),
-          Spacer(),
-        ], // children
-      ),
+      body: Center(
+        child: Container(
+          constraints: BoxConstraints(maxWidth: 720),
+          child: ListView(
+            children: [
+              const HeroImage(),
+              const HeroHeader(),
+              const HeroSubtitile(),
+              const SizedBox(height: 40),
+              const HeroButton(),
+              const SizedBox(height: 40),
+            ],
+          ),
+        )
+      )
     );
   }
 }
