@@ -1,24 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/models/grocery_item.dart';
 
 class CartModel extends ChangeNotifier {
-  final List _shopItems = [
-    ['Avocado', '2.00', 'lib/images/avocado.png', Colors.green],
-    ['Banana', '1.50', 'lib/images/banana.jpeg', Colors.yellow],
-    ['Chicken', '3.00', 'lib/images/chicken.png', Colors.amber],
-    ['Water', '2.50', 'lib/images/water.jpeg', Colors.lightBlue],
+  final List<GroceryItem> _groceryItems = [
+    GroceryItem(
+      name: 'Avocado',
+      price: '2.00',
+      image: 'lib/images/avocado.png',
+      color: Colors.green,
+    ),
+    GroceryItem(
+      name: 'Banana',
+      price: '1.50',
+      image: 'lib/images/banana.jpeg',
+      color: Colors.yellow,
+    ),
+    GroceryItem(
+      name: 'Chicken',
+      price: '3.00',
+      image: 'lib/images/chicken.png',
+      color: Colors.amber,
+    ),
+    GroceryItem(
+      name: 'Water',
+      price: '2.50',
+      image: 'lib/images/water.jpeg',
+      color: Colors.lightBlue,
+    ),
   ];
 
-  final List _cartItems = [];
+  final List<GroceryItem> _cartItems = [];
 
-  get cartItems => _cartItems;
+  List<GroceryItem> get cartItems => _cartItems;
 
-  get shopItems => _shopItems;
+  List<GroceryItem> get groceryItems => _groceryItems;
 
   void addItemToCart(int index) {
-    _cartItems.add(_shopItems[index]);
+    _cartItems.add(_groceryItems[index]);
     notifyListeners();
   }
 
+  /// Delete the grocery item from the cart, it takes
+  /// an idex and operates on List&lt;GroceryItem&gt; _cartItem private field.
   void removeItemFromCart(int index) {
     _cartItems.removeAt(index);
     notifyListeners();
@@ -28,7 +51,7 @@ class CartModel extends ChangeNotifier {
     double totalPrice = 0.0;
 
     for (int i = 0; i < _cartItems.length; i++) {
-      totalPrice += double.parse(_cartItems[i][1]);
+      totalPrice += double.parse(_cartItems[i].price);
     }
     return totalPrice.toStringAsFixed(2);
   }
