@@ -12,7 +12,8 @@ class ButtonContainer extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
       child: Text(
-        style: TextStyle(color: Colors.white, fontSize: 20),
+        textAlign: TextAlign.center,
+        style: TextStyle(color: Colors.white, fontSize: 20,),
         'Get Started ⚡',
       ),
     );
